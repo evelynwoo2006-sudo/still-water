@@ -10,20 +10,20 @@
   var mount = document.getElementById("site-nav");
   if (!mount) return;
 
-  /* 与 nav.html 保持一致的兜底版本，仅在无法 fetch（例如直接双击本地文件）时使用 */
+  /* Fallback version matching nav.html, used only when fetch is unavailable (e.g. opening files directly) */
   var FALLBACK =
-    '<a class="brand" href="index.html" aria-label="静水 · 回到首页">' +
+    '<a class="brand" href="index.html" aria-label="Still Water · back to the home page">' +
     '<span class="brand-mark" aria-hidden="true">◍</span>' +
-    '<span class="brand-name">静水</span>' +
-    '<span class="brand-sub">still water</span></a>' +
-    '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" aria-label="打开导航菜单"><span></span><span></span></button>' +
-    '<nav class="site-nav" id="site-nav-list" aria-label="主导航"><ul>' +
-    '<li><a href="index.html" data-page="index">首页</a></li>' +
-    '<li><a href="quotes.html" data-page="quotes">句子</a></li>' +
-    '<li><a href="project.html" data-page="project">项目</a></li>' +
-    '<li><a href="machine.html" data-page="machine">机器</a></li>' +
+    '<span class="brand-name">Still Water</span>' +
+    '<span class="brand-sub">a quiet corner</span></a>' +
+    '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" aria-label="Open navigation menu"><span></span><span></span></button>' +
+    '<nav class="site-nav" id="site-nav-list" aria-label="Main navigation"><ul>' +
+    '<li><a href="index.html" data-page="index">Home</a></li>' +
+    '<li><a href="quotes.html" data-page="quotes">Sentences</a></li>' +
+    '<li><a href="project.html" data-page="project">Projects</a></li>' +
+    '<li><a href="machine.html" data-page="machine">Machine</a></li>' +
     "</ul>" +
-    '<button class="theme-toggle" type="button" aria-pressed="false" aria-label="切换明暗模式"><span aria-hidden="true"></span></button>' +
+    '<button class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle light / dark mode"><span aria-hidden="true"></span></button>' +
     "</nav>";
 
   function enhance() {
@@ -45,7 +45,7 @@
       toggle.addEventListener("click", function () {
         var open = bar.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "关闭导航菜单" : "打开导航菜单");
+        toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
       });
 
       var navLinks = mount.querySelectorAll(".site-nav a");
@@ -71,7 +71,7 @@
       var sync = function () {
         var dark = document.documentElement.getAttribute("data-theme") === "dark";
         themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
-        themeBtn.setAttribute("aria-label", dark ? "切换到浅色模式" : "切换到深色模式");
+        themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
       };
 
       sync();

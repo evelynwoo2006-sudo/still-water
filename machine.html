@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>机器 · 一台无用机器和一盏灯 | 静水</title>
-<meta name="description" content="一台只会替你关掉开关的无用机器，和一个四十五秒的小游戏「拾光」：用一盏灯接住夜里落下的光点。">
+<title>Machine · One Useless Machine and a Lantern | Still Water</title>
+<meta name="description" content="A useless machine that only switches itself off, and a forty-five-second little game called Gathering Light: catch the sparks falling out of the night with a lantern.">
 <meta name="theme-color" content="#f7f3ea">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
@@ -17,7 +17,7 @@
 </script>
 </head>
 <body data-page="machine">
-<a class="skip" href="#main">跳到正文</a>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar" id="top">
   <div class="wrap topbar-inner" id="site-nav"></div>
@@ -28,80 +28,80 @@
   <!-- ========== HERO ========== -->
   <section class="page-hero wrap">
     <div>
-      <p class="eyebrow">房间三 · 机器 / Machine</p>
-      <h1 class="page-title">两台没什么用的机器</h1>
+      <p class="eyebrow">Room 03 · Machine</p>
+      <h1 class="page-title">Two machines of no use at all</h1>
       <p class="lede">
-        一台只会把开关关掉，一个只会接住光。它们都不解决问题，也不提高效率——
-        但有时候，人需要一件完全无意义、但可以反复做的小事。
+        One only knows how to switch itself off; the other only knows how to catch light. Neither solves a problem, and neither improves efficiency —
+        but sometimes a person needs one small, utterly meaningless thing they can do over and over.
       </p>
     </div>
     <figure class="art-frame">
-      <img src="assets/hero-machine.svg" width="1200" height="700" alt="无用机器的线稿：开关、伸向它的手臂和一轮小月亮">
-      <figcaption><span>Fig. 04 — 无用机器</span><span>Useless Machine</span></figcaption>
+      <img src="assets/hero-machine.svg" width="1200" height="700" alt="Line drawing of the useless machine: a switch, an arm reaching for it, and a small moon">
+      <figcaption><span>Fig. 04 — The Useless Machine</span><span>Toy No. 01</span></figcaption>
     </figure>
   </section>
 
-  <!-- ========== 无用机器 ========== -->
+  <!-- ========== THE USELESS MACHINE ========== -->
   <section class="section wrap" id="toy-one">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Toy 01 · 数字玩具</p>
-        <h2>它只会把开关关掉</h2>
+        <p class="eyebrow">Toy 01 · A Digital Toy</p>
+        <h2>It only turns itself off</h2>
       </div>
-      <p class="lede">你打开，它关上。它没有别的功能，也不需要被理解。</p>
+      <p class="lede">You turn it on; it turns it off. It has no other function, and needs no understanding.</p>
     </div>
 
     <div class="plate">
       <div class="machine-stage">
         <span class="switch-label" aria-hidden="true">on / off</span>
-        <button class="switch" id="switchBtn" type="button" role="switch" aria-checked="false" aria-label="开关，按一下打开">
+        <button class="switch" id="switchBtn" type="button" role="switch" aria-checked="false" aria-label="Switch, press to turn on">
           <span class="switch-knob" aria-hidden="true"></span>
         </button>
         <span class="arm" id="arm" aria-hidden="true"><span class="arm-hand"></span></span>
       </div>
 
       <div class="machine-readout">
-        <p class="machine-note" id="machineNote" aria-live="polite">按一下。它会替你关掉。</p>
-        <p class="machine-count">它已经关掉你 <b id="machineCount">0</b> 次</p>
+        <p class="machine-note" id="machineNote" aria-live="polite">Press it. It will turn itself off for you.</p>
+        <p class="machine-count">It has turned you off <b id="machineCount">0</b> times</p>
       </div>
     </div>
   </section>
 
-  <!-- ========== 拾光 ========== -->
+  <!-- ========== GATHERING LIGHT ========== -->
   <section class="section wrap" id="game">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Toy 02 · 小游戏</p>
-        <h2>拾光</h2>
+        <p class="eyebrow">Toy 02 · A Little Game</p>
+        <h2>Gathering Light</h2>
       </div>
-      <p class="lede">四十五秒，用船头的一盏灯接住落下来的光点。没有输，只有收集。</p>
+      <p class="lede">Forty-five seconds: catch falling sparks with the lantern at the bow. There is no losing, only gathering.</p>
     </div>
 
     <div class="game-shell">
       <div class="game-hud">
-        <span>时间 <b id="hudTime">45</b></span>
-        <span>光 <b id="hudLights">0</b></span>
-        <span>最好 <b id="hudBest">0</b></span>
+        <span>Time <b id="hudTime">45</b></span>
+        <span>Lights <b id="hudLights">0</b></span>
+        <span>Best <b id="hudBest">0</b></span>
       </div>
 
       <div class="game-canvas-wrap">
-        <canvas id="gameCanvas" role="img" aria-label="拾光小游戏：左右移动小船，接住落下的光点"></canvas>
+        <canvas id="gameCanvas" role="img" aria-label="Gathering Light: move the boat left and right to catch the falling sparks"></canvas>
 
         <div class="game-overlay" id="gameOverlay">
           <div class="overlay-card">
-            <h3 id="ovTitle">拾光</h3>
-            <p id="ovText">灯在船头。光点从夜里慢慢落下来，接住它们就好。</p>
+            <h3 id="ovTitle">Gathering Light</h3>
+            <p id="ovText">The lantern is at the bow. Sparks drift down out of the night — just catch them.</p>
             <div class="score-line" id="ovScore" hidden></div>
-            <button class="btn" type="button" id="startBtn">开始</button>
+            <button class="btn" type="button" id="startBtn">Begin</button>
           </div>
         </div>
       </div>
     </div>
 
     <p class="hint">
-      <span>← → 移动</span>
-      <span>也可以直接用手指或鼠标拖</span>
-      <span>空格 = 开始 / 重来</span>
+      <span>← → to move</span>
+      <span>or drag with a finger or mouse</span>
+      <span>Space = start / retry</span>
     </p>
   </section>
 
@@ -109,13 +109,13 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <span>静水 · still water — 一个不追流量的网站</span>
-    <nav aria-label="页脚导航">
-      <a href="index.html">首页</a>
-      <a href="quotes.html">句子</a>
-      <a href="project.html">项目</a>
-      <a href="machine.html">机器</a>
-      <a href="#top">回到顶部</a>
+    <span>Still Water — a website that does not chase traffic</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="quotes.html">Sentences</a>
+      <a href="project.html">Projects</a>
+      <a href="machine.html">Machine</a>
+      <a href="#top">Back to top</a>
     </nav>
   </div>
 </footer>

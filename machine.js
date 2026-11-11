@@ -18,14 +18,14 @@
   var count = 0;
 
   var lines = [
-    "它完成了它的工作。",
-    "再一次。它并不介意重复。",
-    "它不恨你，这只是职责所在。",
-    "你按，它关。世界因此完整了一点点。",
-    "这一下，算你今天做的无用功。",
-    "很好。什么也没有发生。",
-    "它把「开」这件事，还给了「关」。",
-    "如果所有问题都这么好解决就好了。"
+    "It has done its job.",
+    "Again. It does not mind repeating itself.",
+    "It does not hate you; it is simply its duty.",
+    "You press, it closes. The world is a little more complete for it.",
+    "Count that as today's useless work.",
+    "Good. Nothing happened.",
+    "It has returned \"on\" to \"off\".",
+    "If only every problem were this easy to solve."
   ];
   var lastLine = -1;
 
@@ -47,7 +47,7 @@
     busy = true;
 
     sw.setAttribute("aria-checked", "true");
-    sw.setAttribute("aria-label", "开关，已打开");
+    sw.setAttribute("aria-label", "switch, on");
     note.textContent = "……";
 
     await wait(620);
@@ -59,7 +59,7 @@
     await wait(170);
 
     sw.setAttribute("aria-checked", "false");
-    sw.setAttribute("aria-label", "开关，按一下打开");
+    sw.setAttribute("aria-label", "switch, press to turn on");
     count += 1;
     if (countEl) countEl.textContent = String(count);
     note.textContent = nextLine();
@@ -241,10 +241,10 @@
   }
 
   function lineFor(n) {
-    if (n <= 4) return "今晚的光很少，但你每一颗都看见了。";
-    if (n <= 9) return "你接住了光，也没有想着要照亮谁。";
-    if (n <= 15) return "海面很安静，你已经很久没有这样专注过了。";
-    return "你收集了一整片夜。它属于你，不必给任何人看。";
+    if (n <= 4) return "Few lights tonight, but you saw every one of them.";
+    if (n <= 9) return "You caught the light without trying to shine it on anyone.";
+    if (n <= 15) return "The sea is quiet; it has been a long time since you focused like this.";
+    return "You gathered a whole night. It is yours; you need not show it to anyone.";
   }
 
   function start() {
@@ -273,11 +273,11 @@
     }
     if (hudBest) hudBest.textContent = String(game.best);
 
-    ovTitle.textContent = "四十五秒";
+    ovTitle.textContent = "Forty-five seconds";
     ovScore.hidden = false;
-    ovScore.innerHTML = game.lights + "<small>光点</small>";
+    ovScore.innerHTML = game.lights + "<small>sparks</small>";
     ovText.textContent = lineFor(game.lights);
-    startBtn.textContent = "再来一次";
+    startBtn.textContent = "Once more";
     overlay.hidden = false;
     needsDraw = true;
   }

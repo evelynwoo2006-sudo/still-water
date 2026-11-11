@@ -36,7 +36,7 @@
     }
 
     if (outCount) {
-      outCount.textContent = "第 " + (index + 1) + " 句，共 " + items.length + " 句";
+      outCount.textContent = "No. " + (index + 1) + " of " + items.length;
     }
   }
 
