@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" width="1200" height="880" role="img" aria-label="暮色中的海面，一轮淡月、远山与一只小船">
+  <title>暮色海面</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.25" y2="1">
+      <stop offset="0" stop-color="#f9f4e9"/>
+      <stop offset="0.5" stop-color="#f1ecdf"/>
+      <stop offset="1" stop-color="#e4e9e4"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fffbf1" stop-opacity="0.8"/>
+      <stop offset="0.4" stop-color="#fff9ec" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#fff9ec" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdd9d6"/>
+      <stop offset="1" stop-color="#e0e6e2"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a9bdbb"/>
+      <stop offset="1" stop-color="#c8d4d1"/>
+    </linearGradient>
+    <linearGradient id="cliff" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#5a747a"/>
+      <stop offset="1" stop-color="#3c535c"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9eee8"/>
+      <stop offset="1" stop-color="#dae2de"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="880" fill="url(#sky)"/>
+  <circle cx="876" cy="248" r="300" fill="url(#halo)"/>
+  <circle cx="876" cy="248" r="84" fill="#fdf8ec"/>
+  <circle cx="876" cy="248" r="84" fill="none" stroke="#8aa2a4" stroke-opacity="0.3"/>
+  <circle cx="876" cy="248" r="104" fill="none" stroke="#8aa2a4" stroke-opacity="0.12"/>
+
+  <!-- 远山 -->
+  <path d="M0 476 C 90 442 176 452 258 466 C 352 482 428 444 520 456 C 612 468 690 436 780 452 C 872 468 946 442 1040 456 C 1116 468 1168 460 1200 464 L1200 530 L0 530 Z" fill="url(#hillFar)" opacity="0.8"/>
+  <path d="M0 520 C 82 500 168 514 250 506 C 348 496 420 518 512 512 C 610 506 686 522 782 514 C 878 506 950 520 1046 512 C 1114 506 1168 510 1200 514 L1200 566 L0 566 Z" fill="url(#hillMid)" opacity="0.75"/>
+
+  <!-- 海平线 -->
+  <rect x="0" y="558" width="1200" height="322" fill="url(#water)"/>
+  <rect x="0" y="558" width="1200" height="1" fill="#8aa2a4" opacity="0.45"/>
+  <rect x="0" y="566" width="1200" height="1" fill="#8aa2a4" opacity="0.12"/>
+
+  <!-- 月光落下 -->
+  <g fill="#fffdf4">
+    <rect x="826" y="588" width="104" height="3" opacity="0.85" rx="1.5"/>
+    <rect x="838" y="606" width="80" height="3" opacity="0.7" rx="1.5"/>
+    <rect x="818" y="626" width="120" height="2.5" opacity="0.6" rx="1.2"/>
+    <rect x="846" y="648" width="66" height="2.5" opacity="0.5" rx="1.2"/>
+    <rect x="802" y="672" width="150" height="2" opacity="0.42" rx="1"/>
+    <rect x="840" y="698" width="76" height="2" opacity="0.34" rx="1"/>
+    <rect x="790" y="726" width="176" height="2" opacity="0.26" rx="1"/>
+    <rect x="852" y="756" width="56" height="2" opacity="0.2" rx="1"/>
+    <rect x="778" y="790" width="200" height="2" opacity="0.14" rx="1"/>
+  </g>
+
+  <!-- 水面细纹 -->
+  <g stroke="#7f9599" stroke-opacity="0.16" stroke-width="1">
+    <line x1="60" y1="596" x2="286" y2="596"/>
+    <line x1="120" y1="622" x2="392" y2="622"/>
+    <line x1="48" y1="654" x2="240" y2="654"/>
+    <line x1="300" y1="684" x2="520" y2="684"/>
+    <line x1="96" y1="712" x2="352" y2="712"/>
+    <line x1="430" y1="742" x2="640" y2="742"/>
+    <line x1="150" y1="774" x2="300" y2="774"/>
+    <line x1="520" y1="806" x2="700" y2="806"/>
+  </g>
+
+  <!-- 小船 -->
+  <g opacity="0.62">
+    <path d="M1016 556 l40 0 l-5 9 l-30 0 z" fill="#4f6b78"/>
+    <path d="M1036 556 l0 -26 l16 26 z" fill="#4f6b78" opacity="0.8"/>
+  </g>
+
+  <!-- 前景崖壁 -->
+  <path d="M0 880 L0 700 L46 686 L104 700 L150 682 L206 708 L252 700 L300 726 L338 768 L360 880 Z" fill="url(#cliff)"/>
+  <path d="M0 880 L0 760 L52 748 L110 764 L166 750 L226 776 L280 770 L330 802 L344 880 Z" fill="#31474f" opacity="0.55"/>
+  <g stroke="#f4efe3" stroke-opacity="0.16" stroke-width="1" fill="none">
+    <path d="M0 726 L44 714 L104 728 L152 710 L206 734 L252 726"/>
+    <path d="M0 786 L54 776 L112 790 L170 778 L230 800 L284 794"/>
+  </g>
+
+  <!-- 海鸟 -->
+  <g fill="none" stroke="#7f9599" stroke-width="1.3" stroke-linecap="round" opacity="0.5">
+    <path d="M282 232 q11 -9 22 0 q11 -9 22 0"/>
+    <path d="M352 196 q8 -7 16 0 q8 -7 16 0"/>
+    <path d="M236 288 q6 -6 13 0 q7 -6 13 0"/>
+  </g>
+
+  <rect width="1200" height="880" filter="url(#grain)" opacity="0.055" style="mix-blend-mode:multiply"/>
+</svg>

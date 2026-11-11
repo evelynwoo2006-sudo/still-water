@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="一台只会把开关关掉的机器的线稿：开关、伸出的手臂和一轮小月亮">
+  <title>无用机器</title>
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#f6f2e8"/>
+      <stop offset="1" stop-color="#e6e8e1"/>
+    </linearGradient>
+    <radialGradient id="mglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fffaf0" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fffaf0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mgrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#mbg)"/>
+  <circle cx="908" cy="188" r="150" fill="url(#mglow)"/>
+  <circle cx="908" cy="188" r="44" fill="#fcf7ea"/>
+  <circle cx="908" cy="188" r="44" fill="none" stroke="#8aa2a4" stroke-opacity="0.35"/>
+
+  <!-- 星 -->
+  <g fill="#4f6b78" opacity="0.4">
+    <circle cx="250" cy="150" r="2"/>
+    <circle cx="366" cy="112" r="1.4"/>
+    <circle cx="470" cy="182" r="1.8"/>
+    <circle cx="640" cy="120" r="1.2"/>
+    <circle cx="1046" cy="132" r="2"/>
+    <circle cx="1092" cy="268" r="1.4"/>
+    <circle cx="180" cy="252" r="1.2"/>
+  </g>
+
+  <!-- 桌面线 -->
+  <line x1="90" y1="540" x2="1110" y2="540" stroke="#1c2630" stroke-opacity="0.3"/>
+  <line x1="90" y1="560" x2="1110" y2="560" stroke="#1c2630" stroke-opacity="0.1"/>
+
+  <!-- 底座 -->
+  <path d="M444 540 L596 540 L586 512 L454 512 Z" fill="none" stroke="#4f6b78" stroke-opacity="0.5"/>
+  <g stroke="#1c2630" stroke-opacity="0.14">
+    <line x1="470" y1="548" x2="470" y2="572"/>
+    <line x1="520" y1="548" x2="520" y2="572"/>
+    <line x1="570" y1="548" x2="570" y2="572"/>
+  </g>
+
+  <!-- 开关 -->
+  <rect x="490" y="382" width="60" height="132" rx="30" fill="#fbf7ee" stroke="#1c2630" stroke-opacity="0.4"/>
+  <circle cx="520" cy="410" r="22" fill="#a8775f" fill-opacity="0.9"/>
+  <circle cx="520" cy="410" r="22" fill="none" stroke="#1c2630" stroke-opacity="0.2"/>
+  <line x1="520" y1="382" x2="520" y2="470" stroke="#1c2630" stroke-opacity="0.08" stroke-dasharray="4 6"/>
+
+  <!-- 手臂 -->
+  <line x1="1200" y1="452" x2="606" y2="452" stroke="#4f6b78" stroke-width="2"/>
+  <circle cx="606" cy="452" r="15" fill="#fbf7ee" stroke="#4f6b78" stroke-width="1.4"/>
+  <circle cx="606" cy="452" r="26" fill="none" stroke="#4f6b78" stroke-opacity="0.2" stroke-dasharray="2 5"/>
+  <g stroke="#4f6b78" stroke-opacity="0.55">
+    <line x1="720" y1="446" x2="720" y2="458"/>
+    <line x1="820" y1="446" x2="820" y2="458"/>
+    <line x1="920" y1="446" x2="920" y2="458"/>
+  </g>
+
+  <!-- 运动方向箭头 -->
+  <g stroke="#a8775f" stroke-opacity="0.6" fill="none">
+    <path d="M900 366 L660 366"/>
+    <path d="M678 354 L658 366 L678 378"/>
+  </g>
+
+  <!-- 标注线 -->
+  <g stroke="#1c2630" stroke-opacity="0.14">
+    <line x1="120" y1="626" x2="1080" y2="626"/>
+  </g>
+  <text x="120" y="666" font-family="Georgia, serif" font-size="19" letter-spacing="5" fill="#78868d" opacity="0.9">USELESS &#183; MACHINE</text>
+  <text x="1080" y="666" text-anchor="end" font-family="Georgia, serif" font-size="19" letter-spacing="5" fill="#78868d" opacity="0.9">NO. 01</text>
+
+  <rect width="1200" height="700" filter="url(#mgrain)" opacity="0.05" style="mix-blend-mode:multiply"/>
+</svg>

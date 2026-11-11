@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="几张散落的卡片，被一条细线连成星座">
+  <title>散落的卡片</title>
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#f7f3e9"/>
+      <stop offset="1" stop-color="#e8e9e0"/>
+    </linearGradient>
+    <filter id="pgrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#pbg)"/>
+
+  <!-- 星座连线 -->
+  <g stroke="#4f6b78" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 7" fill="none">
+    <path d="M232 210 L466 348 L700 214 L918 366 L1046 236"/>
+    <path d="M466 348 L560 528 L918 366"/>
+  </g>
+
+  <!-- 卡片 -->
+  <g fill="#fbf7ee" stroke="#1c2630" stroke-opacity="0.22">
+    <rect x="176" y="152" width="180" height="228" transform="rotate(-4 266 266)"/>
+    <rect x="418" y="288" width="180" height="228" transform="rotate(3 508 402)"/>
+    <rect x="652" y="150" width="180" height="228" transform="rotate(-2 742 264)"/>
+    <rect x="872" y="304" width="180" height="228" transform="rotate(5 962 418)"/>
+  </g>
+  <rect x="1000" y="180" width="140" height="180" transform="rotate(-6 1070 270)" fill="#a8775f" fill-opacity="0.1" stroke="#a8775f" stroke-opacity="0.3"/>
+
+  <!-- 卡片上的字迹 -->
+  <g fill="#1c2630" opacity="0.22">
+    <rect x="204" y="196" width="96" height="2" rx="1"/>
+    <rect x="204" y="222" width="120" height="2" rx="1"/>
+    <rect x="204" y="248" width="72" height="2" rx="1"/>
+    <rect x="204" y="300" width="108" height="2" rx="1"/>
+    <rect x="446" y="330" width="104" height="2" rx="1"/>
+    <rect x="446" y="356" width="76" height="2" rx="1"/>
+    <rect x="446" y="408" width="118" height="2" rx="1"/>
+    <rect x="680" y="192" width="112" height="2" rx="1"/>
+    <rect x="680" y="218" width="80" height="2" rx="1"/>
+    <rect x="680" y="270" width="96" height="2" rx="1"/>
+    <rect x="900" y="346" width="92" height="2" rx="1"/>
+    <rect x="900" y="372" width="116" height="2" rx="1"/>
+    <rect x="900" y="424" width="70" height="2" rx="1"/>
+    <rect x="1024" y="214" width="76" height="2" rx="1"/>
+    <rect x="1024" y="240" width="56" height="2" rx="1"/>
+  </g>
+
+  <!-- 节点 -->
+  <g fill="#a8775f">
+    <circle cx="232" cy="210" r="3.4"/>
+    <circle cx="466" cy="348" r="3.4"/>
+    <circle cx="700" cy="214" r="3.4"/>
+    <circle cx="918" cy="366" r="3.4"/>
+    <circle cx="1046" cy="236" r="3.4"/>
+    <circle cx="560" cy="528" r="3.4"/>
+  </g>
+
+  <!-- 地面线 -->
+  <line x1="80" y1="600" x2="1120" y2="600" stroke="#1c2630" stroke-opacity="0.12"/>
+  <g stroke="#4f6b78" stroke-opacity="0.2">
+    <line x1="120" y1="628" x2="240" y2="628"/>
+    <line x1="270" y1="628" x2="330" y2="628"/>
+  </g>
+
+  <rect width="1200" height="700" filter="url(#pgrain)" opacity="0.05" style="mix-blend-mode:multiply"/>
+</svg>
