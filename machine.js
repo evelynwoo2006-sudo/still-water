@@ -1,6 +1,6 @@
 /* ==========================================================================
    machine.js
-   Toy 01 —— 无用机器：你打开，手臂伸出来把它关掉
+   Toy 01 —— 小猫：点一下就摸一下，摸完什么也不会发生
    Toy 02 —— 拾光：四十五秒，用船头的一盏灯接住落下的光点
    ========================================================================== */
 
@@ -8,32 +8,24 @@
 (function () {
   "use strict";
 
-  var sw = document.getElementById("switchBtn");
-  var arm = document.getElementById("arm");
+  var cat = document.getElementById("catBtn");
   var note = document.getElementById("machineNote");
   var countEl = document.getElementById("machineCount");
-  if (!sw || !arm) return;
+  if (!cat) return;
 
-  var busy = false;
   var count = 0;
+  var lastLine = -1;
+  var lastNoteTime = 0;
+  var settleTimer = 0;
 
   var lines = [
-    "It has done its job.",
-    "Again. It does not mind repeating itself.",
-    "It does not hate you; it is simply its duty.",
-    "You press, it closes. The world is a little more complete for it.",
-    "Count that as today's useless work.",
-    "Good. Nothing happened.",
-    "It has returned \"on\" to \"off\".",
-    "If only every problem were this easy to solve."
+    "It purrs. Nothing else happens.",
+    "One useless pet. Filed under: nothing.",
+    "The cat is unchanged. So is everything else.",
+    "It closes its eyes and forgets you immediately.",
+    "There is no record of that anywhere.",
+    "It would let you do this all night."
   ];
-  var lastLine = -1;
-
-  function wait(ms) {
-    return new Promise(function (resolve) {
-      window.setTimeout(resolve, ms);
-    });
-  }
 
   function nextLine() {
     var i = lastLine;
@@ -42,44 +34,28 @@
     return lines[i];
   }
 
-  async function cycle() {
-    if (busy) return;
-    busy = true;
-
-    sw.setAttribute("aria-checked", "true");
-    sw.setAttribute("aria-label", "switch, on");
-    note.textContent = "……";
-
-    await wait(620);
-
-    arm.classList.add("is-out");
-    await wait(760);
-
-    arm.classList.add("is-tap");
-    await wait(170);
-
-    sw.setAttribute("aria-checked", "false");
-    sw.setAttribute("aria-label", "switch, press to turn on");
+  function pet() {
     count += 1;
     if (countEl) countEl.textContent = String(count);
-    note.textContent = nextLine();
 
-    await wait(150);
-    arm.classList.remove("is-tap");
-    await wait(360);
-    arm.classList.remove("is-out");
-    await wait(620);
+    /* 连续点击时先摘掉类、强制重排，动画才会重新播放 */
+    cat.classList.remove("is-petted");
+    void cat.offsetWidth;
+    cat.classList.add("is-petted");
 
-    busy = false;
+    window.clearTimeout(settleTimer);
+    settleTimer = window.setTimeout(function () {
+      cat.classList.remove("is-petted");
+    }, 900);
+
+    var now = new Date().getTime();
+    if (note && (count === 1 || now - lastNoteTime > 1100)) {
+      lastNoteTime = now;
+      note.textContent = nextLine();
+    }
   }
 
-  sw.addEventListener("click", cycle);
-  sw.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      cycle();
-    }
-  });
+  cat.addEventListener("click", pet);
 })();
 
 /* ---------------------------------------------------------------- Toy 02 */
