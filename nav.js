@@ -12,9 +12,8 @@
 
   /* Fallback version matching nav.html, used only when fetch is unavailable (e.g. opening files directly) */
   var FALLBACK =
-    '<a class="brand" href="index.html" aria-label="Still Water · back to the home page">' +
+    '<a class="brand" href="index.html" aria-label="a quiet corner — back to the home page">' +
     '<span class="brand-mark" aria-hidden="true">◍</span>' +
-    '<span class="brand-name">Still Water</span>' +
     '<span class="brand-sub">a quiet corner</span></a>' +
     '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" aria-label="Open navigation menu"><span></span><span></span></button>' +
     '<nav class="site-nav" id="site-nav-list" aria-label="Main navigation"><ul>' +
